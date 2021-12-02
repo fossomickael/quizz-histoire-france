@@ -8,7 +8,9 @@ class QuestionsController < ApplicationController
   def category
     category = Category.find(params[:category_id])
     @questions = category.questions
-    render json: @questions.to_json
+    unwanted_fields = %i[created_at updated_at]
+    render json: @questions.to_json(except: unwanted_fields, include: { choices: { except: unwanted_fields } })
+
   end
 
   def allcategories
