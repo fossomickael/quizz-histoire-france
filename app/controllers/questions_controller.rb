@@ -10,7 +10,6 @@ class QuestionsController < ApplicationController
     @questions = category.questions
     unwanted_fields = %i[created_at updated_at]
     render json: @questions.to_json(except: unwanted_fields, include: { choices: { except: unwanted_fields } })
-
   end
 
   def allcategories

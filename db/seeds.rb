@@ -11,9 +11,121 @@ Category.destroy_all
 Choice.destroy_all
 Question.destroy_all
 
-
+cat_dix_huit = Category.new(name: '18eme')
 cat_dix_neuf = Category.new(name: '19eme')
 cat_napoleon = Category.new(name: 'Napoleon')
+
+libelle = "Quelle est le système de Law, imaginé par l'Écossais John Law ?"
+explication = "Le système de Law, imaginé par l'Écossais John Law en développant l'utilisation de papier-monnaie plutôt que d'espèces métalliques1, et afin de faciliter le commerce et l'investissement, a été mis en place en France, sous la régence de Philippe d'Orléans, de 1716 à 1720, dans le but de liquider la dette laissée par Louis XIV."
+question_law = Question.create!(libelle: libelle, difficulty: 4, explication: explication)
+Choice.create!(libelle: 'Un système hydraulique', is_right_answer: false, question: question_law)
+Choice.create!(libelle: 'Un système chimique', is_right_answer: false, question: question_law)
+Choice.create!(libelle: 'Un système économique', is_right_answer: true, question: question_law)
+Choice.create!(libelle: 'Un système informatique', is_right_answer: false, question: question_law)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_law)
+
+libelle = 'Quelles sont les dates de la Régence ?'
+explication = "Le nom de Régence désigne en France la période de minorité de Louis XV, pendant laquelle le pouvoir, au sein du royaume de France, a été exercé par le prince de sang Philippe d’Orléans."
+question_regence = Question.create!(libelle: libelle, difficulty: 3, explication: explication)
+Choice.create!(libelle: '1705-1713', is_right_answer: false, question: question_regence)
+Choice.create!(libelle: '1715-1723', is_right_answer: true, question: question_regence)
+Choice.create!(libelle: '1725-1733', is_right_answer: false, question: question_regence)
+Choice.create!(libelle: '1735-1743', is_right_answer: false, question: question_regence)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_regence)
+
+libelle = "L'Encyclopédie ou Dictionnaire raisonné des sciences, des arts et des métiers fût éditée sous la direction de"
+explication = "L’Encyclopédie ou Dictionnaire raisonné des sciences, des arts et des métiers est une encyclopédie française, éditée de 1751 à 1772 sous la direction de Denis Diderot et, partiellement, de Jean Le Rond d'Alembert."
+question_enyclo = Question.create!(libelle: libelle, difficulty: 1, explication: explication)
+Choice.create!(libelle: 'Denis Diderot', is_right_answer: true, question: question_enyclo)
+Choice.create!(libelle: 'Étienne de La Boétie', is_right_answer: false, question: question_enyclo)
+Choice.create!(libelle: 'Jacques de Mailles', is_right_answer: false, question: question_enyclo)
+Choice.create!(libelle: 'François Rabelais', is_right_answer: false, question: question_enyclo)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_enyclo)
+
+
+libelle = 'Quelle est la date de la traversée de la Manche en ballon par Jean-Pierre Blanchard?'
+explication = "Jean-Pierre François Blanchard, né le 4 juillet 1753 au Petit-Andely et mort le 7 mars 1809 à Paris, est un aéronaute français qui s'illustra dans la conquête des airs en ballon, notamment la première traversée de la Manche en ballon, le 7 janvier 1785."
+question_ballon = Question.create!(libelle: libelle, difficulty: 3, explication: explication)
+Choice.create!(libelle: '1725', is_right_answer: false, question: question_ballon)
+Choice.create!(libelle: '1745', is_right_answer: false, question: question_ballon)
+Choice.create!(libelle: '1765', is_right_answer: false, question: question_ballon)
+Choice.create!(libelle: '1785', is_right_answer: true, question: question_ballon)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_ballon)
+
+libelle = "Quelle est la date de l'affaire du collier de la reine  Marie-Antoinette,"
+explication = "L’affaire du collier de la reine est une escroquerie qui a pour victime en 1785 le cardinal de Rohan, évêque de Strasbourg, éclaboussant la réputation de la reine de France Marie-Antoinette, épouse de Louis XVI."
+question_collier = Question.create!(libelle: libelle, difficulty: 3, explication: explication)
+Choice.create!(libelle: '1725', is_right_answer: false, question: question_collier)
+Choice.create!(libelle: '1745', is_right_answer: false, question: question_collier)
+Choice.create!(libelle: '1765', is_right_answer: false, question: question_collier)
+Choice.create!(libelle: '1785', is_right_answer: true, question: question_collier)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_collier)
+
+libelle = 'Quelle est la date du Serment du Jeu de paume?'
+explication = "Le serment du Jeu de Paume est l’engagement solennel d’union pris le 20 juin 1789 à la salle du Jeu de paume, à Versailles, par 300 députés du tiers état, auxquels s'associent certains députés du clergé et de la noblesse lors des États généraux de 1789."
+question_paume = Question.create!(libelle: libelle, difficulty: 1, explication: explication)
+Choice.create!(libelle: '1788', is_right_answer: false, question: question_paume)
+Choice.create!(libelle: '1789', is_right_answer: true, question: question_paume)
+Choice.create!(libelle: '1790', is_right_answer: false, question: question_paume)
+Choice.create!(libelle: '1791', is_right_answer: false, question: question_paume)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_paume)
+
+libelle = "Quelle est la date de l'invasion de la Dominique?"
+explication = "L'invasion de la Dominique en 1778 est une invasion française réussie de l'île de la Dominique dans les Antilles, pendant la Guerre d'indépendance des États-Unis. Le 6 septembre, une flotte française, sous le commandement du marquis de Bouillé, débarque des troupes dans l'île. Le détachement britannique se rend le même jour sans tirer un coup de feu. La prise de la Dominique par la marine française a incité les Anglais à renforcer leur flotte nord-américaine. Ils ont alors saisi l'île de Sainte-Lucie en novembre, Savannah et la Géorgie en décembre."
+question_dominique = Question.create!(libelle: libelle, difficulty: 3, explication: explication)
+Choice.create!(libelle: '1768', is_right_answer: false, question: question_dominique)
+Choice.create!(libelle: '1778', is_right_answer: true, question: question_dominique)
+Choice.create!(libelle: '1788', is_right_answer: false, question: question_dominique)
+Choice.create!(libelle: '1798', is_right_answer: false, question: question_dominique)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_dominique)
+
+libelle = 'Quelle est la date de publication du Compte-rendu au Roy de Necker?' 
+explication = 'Necker publie son Compte-rendu au Roy dans lequel il fait le bilan de son administration financière. Ce petit ouvrage enthousiasme les Français mais indigne princes, ministres et parlementaires car il donnait la liste nominale des charges et pensions payées aux courtisans et à la famille royale.'
+question_necker = Question.create!(libelle: libelle, difficulty: 3, explication: explication)
+Choice.create!(libelle: '1761', is_right_answer: false, question: question_necker)
+Choice.create!(libelle: '1771', is_right_answer: false, question: question_necker)
+Choice.create!(libelle: '1781', is_right_answer: true, question: question_necker)
+Choice.create!(libelle: '1791', is_right_answer: false, question: question_necker)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_necker)
+
+libelle = 'Quelle est la date de la mort de Louis XV?' 
+explication = '10 mai 1774 : Louis XV meurt à 15:30, son petit-fils Louis-Auguste devient à cet instant Louis XVI.'
+question_louis_xv = Question.create!(libelle: libelle, difficulty: 2, explication: explication)
+Choice.create!(libelle: '1714', is_right_answer: false, question: question_louis_xv)
+Choice.create!(libelle: '1734', is_right_answer: false, question: question_louis_xv)
+Choice.create!(libelle: '1754', is_right_answer: false, question: question_louis_xv)
+Choice.create!(libelle: '1774', is_right_answer: true, question: question_louis_xv)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_louis_xv)
+
+libelle = 'Quelle est la date de la première représentation du Mariage de Figaro?'
+explication = "La Folle Journée, ou le Mariage de Figaro est une comédie en cinq actes de Pierre-Augustin Caron de Beaumarchais écrite à 46 ans en 1778, lue à la Comédie-Française en 1781, donnée en privé le 23 septembre 1783 dans la maison de campagne du comte de Vaudreil à Gennevilliers (dite château de Gennevilliers)1, mais dont la première représentation officielle publique n'eut lieu que le 27 avril 1784 au théâtre François (aujourd'hui théâtre de l'Odéon), après plusieurs années de censure : ce fut un triomphe, un événement, et l'occasion de polémiques. 68 représentations suivirent en huit mois"
+question_figaro = Question.create!(libelle: libelle, difficulty: 2, explication: explication)
+Choice.create!(libelle: '1724', is_right_answer: false, question: question_figaro)
+Choice.create!(libelle: '1744', is_right_answer: false, question: question_figaro)
+Choice.create!(libelle: '1764', is_right_answer: false, question: question_figaro)
+Choice.create!(libelle: '1784', is_right_answer: true, question: question_figaro)
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_figaro)
+
+libelle = 'Quelle est la date de la Journée des Tuiles à Grenoble?'
+explication = "La journée des Tuiles est le nom donné à une émeute, survenue le 7 juin 1788 à Grenoble, au cours de laquelle les insurgés affrontent la troupe à coups de tuiles, dans le contexte de la fronde parlementaire consécutive à la tentative de réforme du garde des Sceaux Lamoignon et du contrôleur général des finances Loménie de Brienne, visant à annuler les pouvoirs rendus aux parlements au début du règne de Louis XVI (qui annule la réforme du chancelier Maupeou, entreprise à la fin du règne de Louis XV) et comprenant la mise en place de nouveaux impôts (droit de timbre et nouvel impôt foncier général) et mesures de libre-échange, impopulaires depuis la guerre des farines."
+question_grenoble = Question.create!(libelle: libelle, difficulty: 4, explication: explication)
+Choice.create!(libelle: '1758', is_right_answer: false, question: question_grenoble )
+Choice.create!(libelle: '1768', is_right_answer: false, question: question_grenoble )
+Choice.create!(libelle: '1778', is_right_answer: false, question: question_grenoble )
+Choice.create!(libelle: '1788', is_right_answer: true, question: question_grenoble )
+
+QuestionCategory.create!(category: cat_dix_huit, question: question_grenoble )
+
 
 libelle = 'Quelle est la date du sacre de Napoléon Ier?'
 explication = 'La cérémonie religieuse du sacre, officié par le pape Pie VII, suivie de celle du couronnement, se déroula, le dimanche 2 décembre 1804, à Notre-Dame de Paris.'
@@ -248,6 +360,6 @@ question_alger = Question.create!(libelle: libelle, difficulty: 3, explication: 
 Choice.create!(libelle: '1800', is_right_answer: false, question: question_alger)
 Choice.create!(libelle: '1810', is_right_answer: false, question: question_alger)
 Choice.create!(libelle: '1820', is_right_answer: false, question: question_alger)
-Choice.create!(libelle: '1820', is_right_answer: true, question: question_alger)
+Choice.create!(libelle: '1830', is_right_answer: true, question: question_alger)
 
 QuestionCategory.create(category: cat_dix_neuf, question: question_alger)
