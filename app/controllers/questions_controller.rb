@@ -10,4 +10,9 @@ class QuestionsController < ApplicationController
     @questions = category.questions
     render json: @questions.to_json
   end
+
+  def allcategories
+    categories = Category.all.select('name, id')
+    render json: categories
+  end
 end
