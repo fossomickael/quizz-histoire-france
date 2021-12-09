@@ -16,7 +16,7 @@ cat_dix_neuf = Category.new(name: '19eme')
 cat_napoleon = Category.new(name: 'Napoleon')
 
 libelle = "Quelle est le système de Law, imaginé par l'Écossais John Law ?"
-explication = "Le système de Law, imaginé par l'Écossais John Law en développant l'utilisation de papier-monnaie plutôt que d'espèces métalliques1, et afin de faciliter le commerce et l'investissement, a été mis en place en France, sous la régence de Philippe d'Orléans, de 1716 à 1720, dans le but de liquider la dette laissée par Louis XIV."
+explication = "Le système de Law, imaginé par l'Écossais John Law en développant l'utilisation de papier-monnaie plutôt que d'espèces métalliques, et afin de faciliter le commerce et l'investissement, a été mis en place en France, sous la régence de Philippe d'Orléans, de 1716 à 1720, dans le but de liquider la dette laissée par Louis XIV."
 question_law = Question.create!(libelle: libelle, difficulty: 4, explication: explication)
 Choice.create!(libelle: 'Un système hydraulique', is_right_answer: false, question: question_law)
 Choice.create!(libelle: 'Un système chimique', is_right_answer: false, question: question_law)
@@ -26,7 +26,7 @@ Choice.create!(libelle: 'Un système informatique', is_right_answer: false, ques
 QuestionCategory.create!(category: cat_dix_huit, question: question_law)
 
 libelle = 'Quelles sont les dates de la Régence ?'
-explication = "Le nom de Régence désigne en France la période de minorité de Louis XV, pendant laquelle le pouvoir, au sein du royaume de France, a été exercé par le prince de sang Philippe d’Orléans."
+explication = "La Régencen, dans l’histoire du royaume de France, est la période de régence instaurée à la mort de Louis XIV (1er septembre 1715) à cause du trop jeune âge de son héritier désigné, Louis XV, qui n’a que 5 ans et 9 mois. Cette période est remarquable par son progressisme, mais la crédibilité de l’État est affaiblie. La Régence se termine officiellement à la majorité de Louis XV (13 ans et 1 jour) en février 1723, mais une « régence politique » se poursuit."
 question_regence = Question.create!(libelle: libelle, difficulty: 3, explication: explication)
 Choice.create!(libelle: '1705-1713', is_right_answer: false, question: question_regence)
 Choice.create!(libelle: '1715-1723', is_right_answer: true, question: question_regence)
@@ -87,7 +87,7 @@ Choice.create!(libelle: '1798', is_right_answer: false, question: question_domin
 QuestionCategory.create!(category: cat_dix_huit, question: question_dominique)
 
 libelle = 'Quelle est la date de publication du Compte-rendu au Roy de Necker?' 
-explication = 'Necker publie son Compte-rendu au Roy dans lequel il fait le bilan de son administration financière. Ce petit ouvrage enthousiasme les Français mais indigne princes, ministres et parlementaires car il donnait la liste nominale des charges et pensions payées aux courtisans et à la famille royale.'
+explication = 'Necker publia son Compte-rendu au Roy en 1781 dans lequel il fait le bilan de son administration financière. Ce petit ouvrage enthousiasme les Français mais indigne princes, ministres et parlementaires car il donnait la liste nominale des charges et pensions payées aux courtisans et à la famille royale.'
 question_necker = Question.create!(libelle: libelle, difficulty: 3, explication: explication)
 Choice.create!(libelle: '1761', is_right_answer: false, question: question_necker)
 Choice.create!(libelle: '1771', is_right_answer: false, question: question_necker)

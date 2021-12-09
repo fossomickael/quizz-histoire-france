@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/category/all', to: 'questions#allcategories'
   get '/category/:category_id', to: 'questions#category'
 
-  
+  post '/stats/answerquestion', to: 'stats#question_answered'
 end
