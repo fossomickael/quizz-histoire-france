@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/category/:category_id', to: 'questions#category'
 
   post '/stats/answerquestion', to: 'stats#question_answered'
+
+  get '/privacy', to: 'privacy#home'
 end
